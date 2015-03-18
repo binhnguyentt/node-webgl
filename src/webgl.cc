@@ -31,10 +31,6 @@ enum GLObjectType {
 void registerGLObj(GLObjectType type, GLuint obj);
 void unregisterGLObj(GLuint obj);
 
-v8::Handle<v8::Value> ThrowError(const char* msg) {
-    NanThrowError(NanNew<String>(msg));
-}
-
 // A 32-bit and 64-bit compatible way of converting a pointer to a GLuint.
 static GLuint ToGLuint(const void* ptr) {
   return static_cast<GLuint>(reinterpret_cast<size_t>(ptr));
